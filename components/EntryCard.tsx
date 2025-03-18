@@ -1,4 +1,4 @@
-type params = {
+interface params {
   entry: {
     id: string;
     createdAt: Date;
@@ -10,7 +10,7 @@ type params = {
     //   mood: string;
     // };
   };
-};
+}
 
 const EntryCard = ({ entry }: params) => {
   const date = new Date(entry.createdAt).toDateString();
