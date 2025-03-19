@@ -20,9 +20,9 @@ const JournalPage = async () => {
   const entries = await getEntries();
 
   return (
-    <div className="p-10 bg-zinc-400/10 h-full">
-      <h2 className="text-3xl mb-8 ">Journal</h2>
-      <div className="grid grid-cols-3 gap-4 ">
+    <div className="h-full bg-zinc-400/10 p-10">
+      <h2 className="mb-8 text-3xl">Journal</h2>
+      <div className="grid grid-cols-3 gap-4">
         <NewEntryCard />
         {entries.map((entry) => (
           <Link key={entry.id} href={`/journal/${entry.id}`}>
