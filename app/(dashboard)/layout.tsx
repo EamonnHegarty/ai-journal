@@ -15,7 +15,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <div className="relative h-screen w-screen">
       <aside className="absolute top-0 left-0 h-full w-[200px] border-r border-black/10">
-        <div>Ai Journal</div>
+        <div className="flex items-center justify-center px-8 py-6">
+          AI JOURNAL
+        </div>
         <ul>
           {links.map((link) => (
             <li key={link.href} className="px-2 py-6 text-xl text-black">

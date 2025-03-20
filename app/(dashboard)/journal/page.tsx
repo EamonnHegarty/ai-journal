@@ -7,30 +7,39 @@ import Link from "next/link";
 
 const getEntries = async () => {
   const user = await getUserByClerkID();
-  const entries = await prisma.journalEntry.findMany({
-    where: { userId: user.id },
+  const data = await prisma.journalEntry.findMany({
+    where: {
+      userId: user.id,
+    },
     orderBy: {
       createdAt: "desc",
     },
+    include: {
+      analysis: true,
+    },
   });
 
-  return entries;
+  return data;
 };
 
 const JournalPage = async () => {
-  const entries = await getEntries();
+  const data = await getEntries();
 
   return (
-    <div className="h-full bg-zinc-400/10 p-10">
-      <h2 className="mb-8 text-3xl">Journal</h2>
+    <div className="h-full bg-zinc-100/50 px-6 py-8">
+      <h1 className="mb-12 text-4xl">Journals</h1>
+
+      {/* Question Component */}
       <div className="my-8">
         <Question />
       </div>
-      <div className="grid grid-cols-3 gap-4">
+
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <NewEntryCard />
-        {entries.map((entry) => (
+        {data.map((entry) => (
           <Link key={entry.id} href={`/journal/${entry.id}`}>
-            <EntryCard key={entry.id} entry={entry} />
+            <EntryCard entry={entry} />
           </Link>
         ))}
       </div>
