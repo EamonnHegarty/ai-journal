@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Journal
 
-## Getting Started
+## Overview
 
-First, run the development server:
+AI Journal is a **full-stack AI-powered journal application** designed to help users capture, analyze, and reflect on their daily thoughts. With seamless AI integration, it provides **insights, mood tracking, and intelligent summaries** of journal entries, making it an advanced tool for self-reflection and personal growth.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit the live app here: [AI Journal](https://ai-journal-ochre.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+AI Journal is built using modern web technologies:
 
-## Learn More
+- **Frontend**: Next.js, Tailwind CSS, ShadCN
+- **Backend**: Node.js, Next.js API routes
+- **Database**: Neon (PostgreSQL)
+- **Authentication**: NextAuth.js
+- **AI Integration**: OpenAI API
+- **Deployment**: Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **AI-Powered Journaling**: Write entries and get AI-generated summaries, mood analysis, and reflections.
+- **Personalized Insights**: Tracks patterns in journal entries over time.
+- **Secure Authentication**: Uses NextAuth.js for secure login.
+- **Responsive UI**: Styled with Tailwind CSS and ShadCN for a modern, sleek experience.
+- **Cloud Database**: Stores user entries securely in PostgreSQL (Neon DB).
+- **Seamless Deployment**: Hosted on Vercel for fast and reliable performance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Setup Instructions
 
-## Deploy on Vercel
+### Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js (latest LTS version recommended)
+- A PostgreSQL database (using Neon or a local instance)
+- An OpenAI API key for AI-powered features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/your-username/ai-journal.git
+   cd ai-journal
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root directory and add:
+
+   ```env
+   DATABASE_URL=your_neon_db_connection_string
+   NEXTAUTH_SECRET=your_secret_key
+   NEXTAUTH_URL=http://localhost:3000
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+
+4. **Run database migrations:** (if using Prisma)
+
+   ```sh
+   npx prisma migrate dev
+   ```
+
+5. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+   The app should now be running at `http://localhost:3000`
+
+## Deployment
+
+The app is deployed on Vercel. To deploy manually:
+
+1. Push your code to GitHub.
+2. Connect the repository to Vercel.
+3. Set up environment variables in Vercel.
+4. Deploy!
+
+## Contributing
+
+If you’d like to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`feature/new-feature`).
+3. Commit your changes.
+4. Push the branch and open a PR.
+
+## License
+
+This project is licensed under the **MIT License**.
+
+## Contact
+
+For any inquiries or feedback, feel free to reach out or open an issue in the repository.
