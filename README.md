@@ -30,7 +30,9 @@ AI Journal is built using modern web technologies:
 
 
 ## Upcoming Features
-- I'm pivoting to a new project but I will come back and add pagination as it is required here.
+- I'm pivoting to a new project but I will come back and:
+   - Pagination.
+   - Ability to delete entries.
 
 ## Setup Instructions
 
