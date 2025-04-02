@@ -28,6 +28,10 @@ AI Journal is built using modern web technologies:
 - **Cloud Database**: Stores user entries securely in PostgreSQL (Neon DB).
 - **Seamless Deployment**: Hosted on Vercel for fast and reliable performance.
 
+
+## Upcoming Features
+- I'm pivoting to a new project but I will come back and add pagination as it is required here.
+
 ## Setup Instructions
 
 ### Prerequisites
