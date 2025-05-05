@@ -1,3 +1,5 @@
+// utils/api.ts
+
 const createURL = (path: string) => {
   return window.location.origin + path;
 };
@@ -27,6 +29,20 @@ export const updateEntry = async (id: string, content: string) => {
     const data = await res.json();
     return data.data;
   }
+};
+
+export const getEntries = async (page: number = 1, pageSize: number = 6) => {
+  const res = await fetch(
+    new Request(createURL(`/api/journal?page=${page}&pageSize=${pageSize}`), {
+      method: "GET",
+    }),
+  );
+
+  if (res.ok) {
+    return res.json();
+  }
+
+  throw new Error("Failed to fetch entries");
 };
 
 export const askQuestion = async (question: string) => {
