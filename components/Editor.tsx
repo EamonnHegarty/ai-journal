@@ -57,34 +57,39 @@ const Editor = ({ entry }: { entry: Entry }) => {
   });
 
   return (
-    <div className="relative grid h-full w-full grid-cols-3">
-      <div className="absolute top-0 left-0 p-2">
+    <div className="relative flex h-full w-full flex-col lg:flex-row">
+      <div className="absolute top-2 left-2 z-10">
         {isSaving ? (
           <Spinner />
         ) : (
-          <div className="h-[16px] w-[16px] rounded-full bg-green-500"></div>
+          <div className="h-4 w-4 rounded-full bg-green-500"></div>
         )}
       </div>
-      <div className="col-span-2">
+      <div className="h-1/2 w-full lg:h-full lg:w-2/3">
         <textarea
-          className="h-11/12 w-full p-8 text-xl outline-0"
+          className="h-full w-full resize-none p-4 text-base outline-none md:p-6 md:text-lg lg:p-8"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
       </div>
-      <div className="border-l border-black/10">
-        <div className="px-6 py-10" style={{ backgroundColor: color }}>
-          <h2 className="text-2xl">Analysis</h2>
+      <div className="h-1/2 w-full border-t border-black/10 lg:h-full lg:w-1/3 lg:border-t-0 lg:border-l">
+        <div
+          className="px-4 py-4 md:px-6 md:py-6"
+          style={{ backgroundColor: color }}
+        >
+          <h2 className="text-xl font-semibold md:text-2xl">Analysis</h2>
         </div>
-        <div>
+        <div className="overflow-y-auto">
           <ul>
             {analysisData.map((item) => (
               <li
                 key={item.name}
-                className="flex items-center justify-between border-t border-b border-black/10 px-2 py-4"
+                className="flex items-center justify-between border-t border-black/10 px-4 py-3 md:px-6 md:py-4"
               >
-                <span className="text-lg font-semibold">{item.name}</span>
-                <span>{item.value}</span>
+                <span className="text-base font-semibold md:text-lg">
+                  {item.name}
+                </span>
+                <span className="text-sm md:text-base">{item.value}</span>
               </li>
             ))}
           </ul>
