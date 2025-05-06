@@ -1,0 +1,31 @@
+.docs-container {
+  scroll-behavior: smooth;
+}
+
+.docs-sidebar {
+  position: sticky;
+  top: 6rem;
+}
+
+.section-header {
+  scroll-margin-top: 6rem;
+}
+
+.code-block {
+  font-family: "Geist Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.docs-card {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.docs-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
